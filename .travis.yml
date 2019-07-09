@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t harry/docker-angular -f Dockerfile.dev .
+
+script:
+  - docker run harry/docker-angular ng test --watch=false --browsers=ChromeHeadless
