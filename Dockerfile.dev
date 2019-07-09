@@ -1,0 +1,12 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+RUN npm install -g @angular/cli
+COPY package.json .
+RUN npm install --unsafe-perm
+
+COPY . .
+CMD ["npm","start"]
+
+EXPOSE 4200
