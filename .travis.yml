@@ -3,7 +3,8 @@ services:
   - docker
 
 before_install:
+  # - export CHROME_BIN=/usr/bin/google-chrome
   - docker build -t harry/docker-angular -f Dockerfile.dev .
 
 script:
-  - docker run harry/docker-angular ng test --watch=false --browsers=ChromeHeadless
+  - docker run harry/docker-angular ng test --watch=false
